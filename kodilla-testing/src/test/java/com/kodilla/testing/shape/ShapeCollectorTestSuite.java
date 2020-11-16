@@ -43,12 +43,12 @@ public class ShapeCollectorTestSuite {
                 testList.addFigure(new Square(12));
 
         //Then
-        List<Shape> expectedList = Arrays.asList(
+        List<Shape> expectedList =  new ArrayList<>(Arrays.asList(
                 new Circle(23),
                 new Triangle(12, 18),
-                new Square(12));
+                new Square(12)));
 
-        Assert.assertEquals(expectedList, testList.getList());
+        Assert.assertEquals(expectedList,new ArrayList<>(testList.getList())) ;
     }
     @DisplayName("Test for removing figure")
     @Test
@@ -67,8 +67,8 @@ public class ShapeCollectorTestSuite {
         //Then
         List<Shape> expectedList = Arrays.asList(
                 new Circle(23),
-                new Triangle(12, 18),
-                new Square(12));
+                new Triangle(12, 18));
+
 
         Assert.assertEquals(expectedList, testList.getList());
 
@@ -108,10 +108,7 @@ public class ShapeCollectorTestSuite {
 
         ShapeCollector shapesCollection = new ShapeCollector(testList);
 
-        //When
-
-
-        //Then
+        //When and Then
         Assert.assertEquals(testList,shapesCollection.showFigures());
     }
 }

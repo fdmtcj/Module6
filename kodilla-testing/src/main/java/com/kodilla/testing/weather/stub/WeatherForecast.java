@@ -19,16 +19,27 @@ public class WeatherForecast {
         }
         return resultMap;
     }
-            public double average() {
-                double suma=0;
-                int numberOfElements=temperatures.getTemperatures().size();
-                for (Map.Entry<String, Double> temperature :
-                        temperatures.getTemperatures().entrySet()) {
 
-                    suma+= temperature.getValue();
-                }
-                return suma/numberOfElements;
-            }
+    public double average() {
+        double suma = 0;
+        int numberOfElements = temperatures.getTemperatures().size();
+        for (Map.Entry<String, Double> temperature :
+                temperatures.getTemperatures().entrySet()) {
 
+            suma += temperature.getValue();
+        }
+        return suma / numberOfElements;
+    }
 
+    public void median() {
+        double median = 0;
+        int elements = temperatures.getTemperatures().size();
+        for (Map.Entry<String, Double> temperature :
+                temperatures.getTemperatures().entrySet()) {
+
+        }
+
+    }
 }
+
+

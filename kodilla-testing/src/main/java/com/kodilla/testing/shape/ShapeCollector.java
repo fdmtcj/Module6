@@ -9,7 +9,7 @@ public class ShapeCollector {
 
     public ShapeCollector(List<Shape> list) {
 
-        this.list = list;
+        this.list = new ArrayList<>(list);
     }
 
     public void addFigure(Shape shape) {

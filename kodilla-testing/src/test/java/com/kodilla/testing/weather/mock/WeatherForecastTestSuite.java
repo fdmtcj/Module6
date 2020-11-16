@@ -53,6 +53,6 @@ public class WeatherForecastTestSuite {
         double average = weatherForecast.average();
 
         //Then
-        Assertions.assertEquals(5,average);
+        Assertions.assertEquals(25.56,average);
     }
 }
