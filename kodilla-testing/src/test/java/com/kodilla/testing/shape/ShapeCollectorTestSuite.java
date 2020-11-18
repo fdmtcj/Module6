@@ -48,7 +48,7 @@ public class ShapeCollectorTestSuite {
                 new Triangle(12, 18),
                 new Square(12)));
 
-        Assert.assertEquals(expectedList,new ArrayList<>(testList.getList())) ;
+        Assert.assertEquals(expectedList,testList.getList()) ;
     }
     @DisplayName("Test for removing figure")
     @Test
