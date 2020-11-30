@@ -14,26 +14,32 @@ public class LibraryUser {
     }
 
     public String getFirstname() {
+
         return firstname;
     }
 
     public void setFirstname(String firstname) {
+
         this.firstname = firstname;
     }
 
     public String getLastname() {
+
         return lastname;
     }
 
     public void setLastname(String lastname) {
+
         this.lastname = lastname;
     }
 
     public String getPeselId() {
+
         return peselId;
     }
 
     public void setPeselId(String peselId) {
+
         this.peselId = peselId;
     }
     @Override
@@ -50,6 +56,7 @@ public class LibraryUser {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(firstname, lastname, peselId);
     }
 }

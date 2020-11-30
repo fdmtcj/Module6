@@ -53,4 +53,67 @@ public class BookDirectoryTestSuite {
 
         assertTrue(false);
     }
+
+    @Test
+    void testShouldReturnEmptyListWhenUserHasNoBooks(){
+
+        //Given
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        List<Book> listOfBooks = new ArrayList<>();
+        LibraryUser user= new LibraryUser("Jakub","Rej","46456387287");
+        when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn(listOfBooks);
+
+        //When
+        List<Book> result = bookLibrary.listBooksInHandsOfUser(user);
+
+        //Then
+        assertEquals(new ArrayList<Book>(), result);
+    }
+
+    @Test
+    void testShouldReturnListWithOneBookWhenUserHasOneBooks(){
+
+        //Given
+        Book book1 = new Book("Secrets of Alamo", "John Smith", 2008);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        List<Book> listOfBooks = new ArrayList<>();
+        listOfBooks.add(book1);
+        LibraryUser user= new LibraryUser("Jakub","Rej","46456387287");
+        when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn(listOfBooks);
+
+        //When
+        List<Book> result = bookLibrary.listBooksInHandsOfUser(user);
+
+        //Then
+        assertEquals(listOfBooks, result);
+    }
+
+    @Test
+    void testShouldReturnListWithFiveBookWhenUserHasFiveBooks(){
+
+        //Given
+        Book book1 = new Book("Secrets of Alamo", "John Smith", 2008);
+        Book book2 = new Book("Secretaries and Directors", "Dilbert Michigan", 2012);
+        Book book3 = new Book("Secret life of programmers", "Steve Wolkowitz", 2016);
+        Book book4 = new Book("Secrets of Java", "Ian Tenewitch", 2010);
+        Book book5 = new Book("Zbrodnia i Kara", "Fiodor Dostojewski)", 1861);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+
+        List<Book> listOfBooks = new ArrayList<>();
+        listOfBooks.add(book1);
+        listOfBooks.add(book2);
+        listOfBooks.add(book3);
+        listOfBooks.add(book4);
+        listOfBooks.add(book5);
+
+
+        LibraryUser user= new LibraryUser("Jakub","Rej","46456387287");
+        when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn(listOfBooks);
+
+        //When
+        List<Book> result = bookLibrary.listBooksInHandsOfUser(user);
+
+        //Then
+        assertEquals(listOfBooks, result);
+    }
 }

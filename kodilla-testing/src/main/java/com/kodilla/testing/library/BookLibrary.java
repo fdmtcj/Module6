@@ -7,6 +7,7 @@ public class BookLibrary {
     private LibraryDatabase libraryDatabase;
 
     public BookLibrary(LibraryDatabase libraryDatabase) {
+
         this.libraryDatabase = libraryDatabase;
     }
 
@@ -16,5 +17,10 @@ public class BookLibrary {
         bookList.add(book);
 
         return bookList;
+    }
+
+    public List<Book> listBooksInHandsOfUser(LibraryUser libraryUser){
+
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 }
