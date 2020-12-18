@@ -20,4 +20,17 @@ public class ArrayOperationsTestSuite {
         Assert.assertEquals(0, average2, 0.01);
 
     }
+
+    @Test
+    public void testGetAverageWithEmptyTab() {
+        //Given
+        int[] numbers2 = new int[0];
+
+        //When
+        double average2 = ArrayOperations.getAverage(numbers2);
+
+        //Then
+        Assert.assertEquals(0, average2, 0.01);
+
+    }
 }
