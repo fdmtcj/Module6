@@ -4,7 +4,6 @@ public class FlightRunner {
 
     public static void main(String[] args) {
 
-        Flight budapeszt = new Flight("Warszawa", "Budapeszt");
         Flight kijów = new Flight("Warszawa", "Kijów");
         FlightSeeker flightSeeker = new FlightSeeker();
 
