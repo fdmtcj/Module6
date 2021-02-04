@@ -12,12 +12,12 @@ public class Main {
         }
 
         System.out.println("\nFlights from Wrocław:");
-        for (Flight flight: flightsFinder.flightsFrom("")) {
+        for (Flight flight: flightsFinder.flightsFrom("Wrocław")) {
             System.out.println(flight);
         }
 
         System.out.println("\n Connecting flights from Warszawa to Kraków:");
-        for (FlightsSeeker flightConnect: flightsFinder.connectingFlights("Warszawa", "Kraków"))
+        for (FlightConnect flightConnect: flightsFinder.connectingFlights("Warszawa", "Kraków"))
 
             System.out.println(flightConnect);
     }

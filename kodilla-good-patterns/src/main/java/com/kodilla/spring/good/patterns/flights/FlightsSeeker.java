@@ -13,12 +13,9 @@ public class FlightsSeeker {
         this.flightsSet = flightsSetRetrievier.retrieve();
     }
 
-    public FlightsSeeker(Flight firstFlight, Flight secondFlight) {
-
-    }
 
     public Set<Flight> flightsTo(String arrivalCity) {
-        Set<Flight> result  = flightsSet.stream()
+        Set<Flight> result = flightsSet.stream()
                 .filter(flight -> flight.getArrivalCity().equals(arrivalCity))
                 .collect(Collectors.toSet());
         return result;
@@ -31,12 +28,12 @@ public class FlightsSeeker {
         return result;
     }
 
-    public Set<FlightsSeeker> connectingFlights(String departureCity, String arrivalCity) {
-        Set<FlightsSeeker> result = new HashSet<>();
-        for (Flight firstFlight: flightsFrom(departureCity)) {
-            for (Flight secondFlight: flightsTo(arrivalCity)) {
+    public Set<FlightConnect> connectingFlights(String departureCity, String arrivalCity) {
+        Set<FlightConnect> result = new HashSet<>();
+        for (Flight firstFlight : flightsFrom(departureCity)) {
+            for (Flight secondFlight : flightsTo(arrivalCity)) {
                 if (firstFlight.getArrivalCity().equals(secondFlight.getDepartureCity())) {
-                    result.add(new FlightsSeeker(firstFlight, secondFlight));
+                    result.add(new FlightConnect(firstFlight, secondFlight));
                 }
             }
         }

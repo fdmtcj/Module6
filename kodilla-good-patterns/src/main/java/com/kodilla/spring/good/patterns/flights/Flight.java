@@ -34,6 +34,7 @@ public class Flight {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(departureCity, arrivalCity, flightNumber);
     }
 
