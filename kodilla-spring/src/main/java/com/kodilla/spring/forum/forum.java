@@ -3,7 +3,7 @@ package com.kodilla.spring.forum;
 import org.springframework.stereotype.Component;
 
 @Component
-public class forum {
+class ForumUser {
 
     private String username;
 
@@ -11,7 +11,8 @@ public class forum {
         return username;
     }
 
-    public forum() {
+    public ForumUser() {
+
         username = "John Smith";
     }
 }

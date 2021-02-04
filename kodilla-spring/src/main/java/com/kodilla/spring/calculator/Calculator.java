@@ -1,4 +1,4 @@
-package com.kodilla.spring;
+package com.kodilla.spring.calculator;
 
 import com.kodilla.spring.calculator.Display;
 import org.springframework.beans.factory.annotation.Autowired;
