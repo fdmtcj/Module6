@@ -3,6 +3,7 @@ package com.kodilla.factory.tasks;
 import com.kodilla.patterns.factory.tasks.Task;
 import com.kodilla.patterns.factory.tasks.TaskFactory;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TaskFactoryTestSuite {
@@ -18,13 +19,11 @@ public class TaskFactoryTestSuite {
                 "My shopping list",
                 "potatoes",
                 "2.5");
-        boolean beforeExecution = ((Task) shopping).isTaskExecuted();
-        shopping.executeTask();
+
 
         //Then
-        Assert.assertEquals("My shopping list", shopping.getTaskName());
-        Assert.assertFalse(beforeExecution);
-        Assert.assertTrue(shopping.isTaskExecuted());
+        Assertions.assertEquals("My shopping list", shopping.getTaskName());
+
     }
 
     @Test
