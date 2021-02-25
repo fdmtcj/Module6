@@ -3,45 +3,45 @@ package com.kodilla.patterns.builder.bigmac;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bigmac {
+public class BigMac {
 
     private final RollType roll;
     private final int burgers;
     private final SauceType sauce;
     private List<IngredientsType> ingredients;
 
-    public static class BigmacBuilder {
+    public static class BigMacBuilder {
         private RollType roll;
         private int burgers;
         private SauceType sauce;
         private List<IngredientsType> ingredients = new ArrayList<>();
 
-        public BigmacBuilder roll(RollType roll) {
+        public BigMacBuilder roll(RollType roll) {
             this.roll = roll;
             return this;
         }
 
-        public BigmacBuilder burgers(int burgers) {
+        public BigMacBuilder burgers(int burgers) {
             this.burgers = burgers;
             return this;
         }
 
-        public BigmacBuilder sauce(SauceType sauce) {
+        public BigMacBuilder sauce(SauceType sauce) {
             this.sauce = sauce;
             return this;
         }
 
-        public BigmacBuilder ingredients(IngredientsType ingredient) {
+        public BigMacBuilder ingredients(IngredientsType ingredient) {
             ingredients.add(ingredient);
             return this;
         }
 
-        public Bigmac build() {
-            return new Bigmac(roll, burgers, sauce, ingredients);
+        public BigMac build() {
+            return new BigMac(roll, burgers, sauce, ingredients);
         }
     }
 
-    public Bigmac(RollType roll, int burgers, SauceType sauce, List<IngredientsType> ingredients) {
+    private BigMac(RollType roll, int burgers, SauceType sauce, List<IngredientsType> ingredients) {
         this.roll = roll;
         this.burgers = burgers;
         this.sauce = sauce;

@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 public class BurgerTestSuite {
 
     @Test
-    public void testBigmackNew() {
+    public void testBigMacNew() {
         //Given
-        Bigmac bigmac = new Bigmac.BigmacBuilder()
+        BigMac bigmac = new BigMac.BigMacBuilder()
                 .roll(RollType.STANDARD)
                 .burgers(2)
                 .sauce(SauceType.THOUSAND_ISLANDS)
